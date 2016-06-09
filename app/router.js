@@ -58,7 +58,7 @@ Router.map(function() {
       this.route('crons', { path: '/crons', resetNamespace: true });
       this.route('requests', { path: '/requests', resetNamespace: true });
       if (config.endpoints.caches) {
-        this.resource('caches', { path: '/caches' });
+        this.route('caches', { path: '/caches' });
       }
       this.route('request', { path: '/requests/:request_id', resetNamespace: true });
       this.route('settings', { resetNamespace: true }, function() {
@@ -67,7 +67,7 @@ Router.map(function() {
           this.route('new');
         });
         if (config.endpoints.sshKey) {
-          this.resource('ssh_key');
+          this.route('ssh_key');
         }
       });
     });
